@@ -1,0 +1,12 @@
+
+class TourismApplication {
+
+  login (username, password) {},
+    
+  logout (username) {},
+    
+  submitTopTen(city, travelerType, username) {}
+    
+  viewTopTen (city, travelerType) {}
+
+}
