@@ -1,0 +1,162 @@
+
+
+
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>CURATE. by locals. for you.</title>
+	<img src=CURATE_logo.png alt="CURATE. by locals. for you." style="width:500px;height:300px;" >
+	<link rel="stylesheet/less" type="text/css" href="styles.less" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script>
+      var topten = {
+        name : "Joe",
+        pick : "Pizza at Guido's"
+      };
+			{
+				name : "Rebecca",
+				pick : "Root beer at Fitz'"
+			};
+			{
+				name : "Juan",
+				pick : "Margaritas and Tacos at Mission Taco'"
+			};
+
+      function loadtemp(){
+        var output = Mustache.render("{{Joe}} says their top pick is  {{pick}}", view);
+        document.getElementById('topten').innerHTML = output;
+      }
+    </script>
+
+
+		<style>
+		@media all
+		{
+		section.text {
+		       float: left;
+		       margin: 20px 0 20px 2.02%;
+		       width: 30.61%;
+		}
+		section.littleImages {
+		       float: left;
+		       width: 50%;
+		       max-width: 400px;
+		       height: auto;
+		}
+		}
+
+		body {
+		       max-width: 1100px;
+		}
+
+			ul {
+		  list-style-type: none;
+		  margin: 0;
+		  padding: 0;
+		}
+
+		.container {
+		    height: 0;
+		    padding-bottom: 100%; /* Or 75% for 4:3 aspect ratio */
+		    position: relative;
+		    overflow: hidden;
+		}
+		.container img {
+		  width: 30%;
+		  height: auto;
+		}
+		}
+
+		@viewport {
+		  width: device-width ;
+		  zoom: 1.0 ;
+		}
+
+		input[type=text], select, textarea {
+		  width: 100%; /* Full width */
+		  padding: 12px; /* Some padding */
+		  border: 1px solid #ccc; /* Gray border */
+		  border-radius: 4px; /* Rounded borders */
+		  box-sizing: border-box; /* Make sure that padding and width stays in place */
+		  margin-top: 6px; /* Add a top margin */
+		  margin-bottom: 16px; /* Bottom margin */
+		  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+		}
+
+		input[type=submit] {
+		  background-color: #4CAF50;
+		  color: white;
+		  padding: 12px 20px;
+		  border: none;
+		  border-radius: 4px;
+		  cursor: pointer;
+		}
+
+		input[type=submit]:hover {
+		  background-color: #45a049;
+		}
+		.container {
+		  border-radius: 5px;
+		  background-color: #f2f2f2;
+		  padding: 20px;
+		}
+		}
+
+		</style>
+</head>
+
+	<body>
+		<ul>
+		  <li><a href="Home.html">Home</a></li>
+		  <li><a href="topten.html">Top 10</a></li>
+		  <li><a href="FreeInfoPacket.html">Free Info Packet</a></li>
+		  <li><a href="Submit.html">Submit Your Top Picks</a></li>
+		</ul>
+
+		<h2> Some Recently-Submitted Favorite Spots </h2>
+							<ul id="topten" </ul>
+							<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.js" type="text/javascript"></script>
+							<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" type = "text/javascript"></script>
+							<script id = "topten-template" type="text/template">
+								{{#item}}
+										<li> {{title}}</li>
+								{{/item}}
+							</script>
+
+							<script>
+								$(function() {
+									$.getJSON('topten.json')
+									function(data) {
+										var template = $('#topten-template').html();
+										var info = Mustache.to_html(template, data);
+										$('#topten').html(info);
+									});
+								});
+							</script>
+			<p>
+      <form>
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname"><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname">
+        <label for="email">Email:</label><br>
+        <input type="text" id="email" name="email">
+        <label for="Phone">Phone:</label><br>
+        <input type="text" id="phone" name="phone">
+        <label for="Address">Address:</label><br>
+        <input type="text" id="Address" name="address">
+        <label for="city">City:</label><br>
+        <input type="text" id="city" name="city">
+        <label for="state">State:</label><br>
+        <input type="text" id="state" name="state">
+        <label for="Zip">Zip:</label><br>
+        <input type="text" id="zip" name="zip">
+				<input type="submit">
+      </form>
+
+			</p>
+	</body>
+
+</html>
