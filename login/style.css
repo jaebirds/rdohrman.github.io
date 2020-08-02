@@ -17,7 +17,7 @@ body{
     position: absolute;
     transform: translate(-50%,-50%);
     box-sizing: border-box;
-    padding: 70px 30px;
+    padding: 40px 30px;
 }
 
 .avatar{
@@ -70,7 +70,7 @@ h1{
 .loginbox input[type="submit"]:hover
 {
     cursor: pointer;
-    background: #0000FF;
+    background: #ba7704;
     color: #000;
 }
 .loginbox a{
