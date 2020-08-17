@@ -9,6 +9,9 @@
   $conn = new mysqli('localhost','root','','test');
   if($conn->connect_error){
     die('Connection Failed : '.$conn,>connect-error);
+  }elseif (!empty($username) || !empty($password) || !empty($Fname) || !empty($Lname) || !empty($email))) {
+    echo "All fields are required.";
+    die()
   }else{
     $stmt = $conn->prepare("insert into registration (username,password,Fname,Lname,email)
       values(?,?,?,?,?)"){
