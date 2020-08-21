@@ -11,6 +11,10 @@ section.littleImages {
        max-width: 200px;
        height: auto;
 }
+
+.content {
+  max-width: 500px;
+  margin: auto;
 }
 
 body {
