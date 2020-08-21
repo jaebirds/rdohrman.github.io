@@ -2,23 +2,23 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "users";
- 
+$dbname = "curateloginB";
+
 // Create connection
-$conn = new mysqli($curatelogin, $root, $, $users);
+$conn = mysqli_connect($servername, $username, $password, $dbname);
 // Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
+if (!$conn) {
+  die("Connection failed: " . mysqli_connect_error());
 }
- 
+
 $sql = "INSERT INTO users (username, password, FName, LName, email)
-VALUES ('whatup', 'test', 'John', 'Doe', 'john@example.com')";
- 
-if ($conn->query($sql) === TRUE) {
+VALUES ('test', 'test', 'John', 'Doe', 'john@example.com')";
+
+if (mysqli_query($conn, $sql)) {
   echo "New record created successfully";
 } else {
-  echo "Error: " . $sql . "<br>" . $conn->error;
+  echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
- 
-$conn->close();
+
+mysqli_close($conn);
 ?>
